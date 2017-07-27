@@ -115,3 +115,9 @@ ver pág: https://www.liquidweb.com/kb/how-to-install-mongodb-on-centos-7/
 
 5.1 despliegue en el data center academico:
 
+se instala un manejador de procesos de nodejs, se instala: PM2 (http://pm2.keymetrics.io/)
+
+    emontoya$ npm install -g pm2
+    
+    
+
