@@ -40,6 +40,39 @@ Ejemplo de clase, a modo de tutorial, que cubre:
 
 ## Desarrollo:
 
+## Pruebas
+
+en el DCA:
+
+1. se instala nvm local para el usuario
+
+source: https://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for-node-js-on-centos-7/
+
+2. se instala la version de node:
+
+$ nvm install v7.7.4
+
+3. se instala el servidor mongo
+
+como root:
+
+  '# yum install mongodb-server -y'
+
+ponerlo a correr:
+
+  '# systemctl enable mongod'
+  '# systemctl start mongod'
+
+
+lo instala de los repositorios propios de Centos.
+
+tambien lo puede instalar de un repo de mongodb:
+
+ver pág: https://www.liquidweb.com/kb/how-to-install-mongodb-on-centos-7/
+
+
+
+
 # 3. Diseño:
 
 ## 3.1 Modelo de datos:
