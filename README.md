@@ -8,7 +8,7 @@ Aplicación web que permite gestionar Articulos.
 
 Se generó la base, con Yeoman:
 
-$ yo express
+    $ yo express
 
 (este generador, crea una app base ejemplo MVC para gestión de articulos)
 
@@ -50,7 +50,7 @@ source: https://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for
 
 2. se instala la version de node:
 
-$ nvm install v7.7.4
+    $ nvm install v7.7.4
 
 3. se instala el servidor mongodb
 
