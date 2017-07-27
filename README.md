@@ -119,5 +119,21 @@ se instala un manejador de procesos de nodejs, se instala: PM2 (http://pm2.keyme
 
     emontoya$ npm install -g pm2
     
+abrir los puertos en el firewall que utilizara la app:
+
+    # firewall-cmd --zone=public --add-port=3000/tcp --permanent
+    
+    # firewall-cmd --reload
+    
+    # firewall-cmd --list-all
+    
+como medida desesperada, puede parar y desactivar el firewalld, cosa que no es recomendable:
+
+    # systemctl stop firewalld
+    
+    # systemctl disable firewalld
+    
+    # systemctl start firewalld
+    
     
 
