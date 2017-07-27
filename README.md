@@ -70,9 +70,6 @@ tambien lo puede instalar de un repo de mongodb:
 
 ver pág: https://www.liquidweb.com/kb/how-to-install-mongodb-on-centos-7/
 
-
-
-
 # 3. Diseño:
 
 ## 3.1 Modelo de datos:
