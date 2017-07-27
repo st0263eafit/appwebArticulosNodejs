@@ -56,12 +56,12 @@ $ nvm install v7.7.4
 
 como root:
 
-  '# yum install mongodb-server -y'
+    # yum install mongodb-server -y
 
 ponerlo a correr:
 
-  '# systemctl enable mongod'
-  '# systemctl start mongod'
+    # systemctl enable mongod
+    # systemctl start mongod
 
 
 lo instala de los repositorios propios de Centos.
