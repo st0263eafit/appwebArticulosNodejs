@@ -77,13 +77,13 @@ ver pág: https://www.liquidweb.com/kb/how-to-install-mongodb-on-centos-7/
 
 ## 3.1 Modelo de datos:
 
-article:
+    article:
 
-{
-    title: String,
-    url: String,
-    text: String
-}
+    {
+        title: String,
+        url: String,
+        text: String
+    }
 
 ## 3.2 Servicios Web
 
