@@ -52,7 +52,7 @@ source: https://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for
 
 $ nvm install v7.7.4
 
-3. se instala el servidor mongo
+3. se instala el servidor mongodb
 
 como root:
 
@@ -115,3 +115,7 @@ article:
 # 4. Desarrollo:
 
 # 5. Implementación o Despliegue:
+
+5.1 despliegue en el data center academico:
+
+la primera vez:
