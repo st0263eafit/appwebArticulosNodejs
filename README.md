@@ -97,20 +97,20 @@ article:
       URI: /findbytitle?title=val
     */
 
-/* Servicio Web: Realiza la búsqueda en la base de datos de todos los articulos
-  Método: GET
-  URI: /articles
-*/
+    /* Servicio Web: Realiza la búsqueda en la base de datos de todos los articulos
+      Método: GET
+      URI: /articles
+    */
 
-/* Servicio Web: Borra un Articulo de la Base de datos.
-  Método: GET
-  URI: /delarticle?id=val
- */
+    /* Servicio Web: Borra un Articulo de la Base de datos.
+      Método: GET
+      URI: /delarticle?id=val
+     */
 
- /* Servicio Web: Borra un Articulo de la Base de datos.
-   Método: DELETE
-   URI: /delarticle/id
-  */
+     /* Servicio Web: Borra un Articulo de la Base de datos.
+       Método: DELETE
+       URI: /delarticle/id
+      */
 
 # 4. Desarrollo:
 
@@ -118,4 +118,3 @@ article:
 
 5.1 despliegue en el data center academico:
 
-la primera vez:
