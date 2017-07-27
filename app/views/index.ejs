@@ -1,6 +1,36 @@
 <% include header %>
 
   <h1><%-title %></h1>
-  <p>Welcome to <%-title %></p>
+  <p>Welcome to
+    <%-title %>
+  </p>
 
-<% include footer %>
+  <form action="/newarticle" method="POST">
+    <input type="text" placeholder="title" name="title">
+    <input type="text" placeholder="url" name="url">
+    <input type="text" placeholder="text" name="text">
+    <button type="submit">CREAR</button>
+  </form>
+  <p>
+    <form action="/findbytitle" method="GET">
+      <input type="text" placeholder="title" name="title">
+      <button type="submit">BUSCAR</button>
+    </form>
+
+  <form action="/delarticle" method="GET">
+    <input type="text" placeholder="id" name="id">
+    <button type="submit">BORRAR</button>
+  </form>
+
+  <ol class="articles">
+    <% for(var i=0; i<articles.length; i++) {%>
+      <li class="article">
+        <span>ID: <%= articles[i]._id %></span>
+        <span>TITULO: <%= articles[i].title %></span>
+        <span>URL: <%= articles[i].url %></span>
+        <span>TEXT: <%= articles[i].text %></span>
+      </li>
+      <% } %>
+  </ol>
+
+  <% include footer %>
