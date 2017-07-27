@@ -87,15 +87,15 @@ article:
 
 ## 3.2 Servicios Web
 
-/* Servicio Web: Inserta un registro de Articulo en la Base de datos
-  Método: POST
-  URI: /newarticle
-*/
+    /* Servicio Web: Inserta un registro de Articulo en la Base de datos
+      Método: POST
+      URI: /newarticle
+    */
 
-/* Servicio Web: Realiza la búsqueda en la base de datos, por campo titulo
-  Método: GET
-  URI: /findbytitle?title=val
-*/
+    /* Servicio Web: Realiza la búsqueda en la base de datos, por campo titulo
+      Método: GET
+      URI: /findbytitle?title=val
+    */
 
 /* Servicio Web: Realiza la búsqueda en la base de datos de todos los articulos
   Método: GET
