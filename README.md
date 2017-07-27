@@ -6,7 +6,7 @@ By: Edwin Montoya Munera - emontoya@eafit.educo
 
 Aplicación web que permite gestionar Articulos.
 
-Se generó la base, con Yeoman:
+Se generó la base, con Yeoman (http://yeoman.io/):
 
     $ yo express
 
