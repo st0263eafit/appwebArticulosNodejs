@@ -119,6 +119,16 @@ se instala un manejador de procesos de nodejs, se instala: PM2 (http://pm2.keyme
 
     emontoya$ npm install -g pm2
     
+    emontoya$ cd articulosEM
+    
+    emontoya$ pm2 start app.ps
+    
+    emontoya$ pm2 list
+    
+ponerlo como un servicio, para cuando baje y suba el sistema:    
+    
+    emontoya$ pm2 startup systemd
+    
 abrir los puertos en el firewall que utilizara la app:
 
     # firewall-cmd --zone=public --add-port=3000/tcp --permanent
