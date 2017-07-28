@@ -118,11 +118,8 @@ ver pág: https://www.liquidweb.com/kb/how-to-install-mongodb-on-centos-7/
 se instala un manejador de procesos de nodejs, se instala: PM2 (http://pm2.keymetrics.io/)
 
     emontoya$ npm install -g pm2
-    
     emontoya$ cd articulosEM
-    
     emontoya$ pm2 start app.ps
-    
     emontoya$ pm2 list
     
 ponerlo como un servicio, para cuando baje y suba el sistema:    
@@ -151,7 +148,7 @@ Instalar NGINX:
     
 Abrir el puerto 80
     
-    # firewall-cmd --zone=public --add-port=3000/tcp --permanent
+    # firewall-cmd --zone=public --add-port=80/tcp --permanent
     # firewall-cmd --reload
     
 MUY MUY IMPORTANTE: Deshabilitar SELINUX
@@ -159,6 +156,7 @@ MUY MUY IMPORTANTE: Deshabilitar SELINUX
     # vim /etc/sysconfig/selinux
     
           SELINUX=disabled
+          
     # reboot
     
     
