@@ -111,9 +111,9 @@ ver pág: https://www.liquidweb.com/kb/how-to-install-mongodb-on-centos-7/
 
 # 4. Desarrollo:
 
-# 5. Implementación o Despliegue:
+# 5. Implementación o Despliegue (DCA y PaaS):
 
-5.1 despliegue en el data center academico:
+5.1 despliegue en el data center academico (DCA):
 
 se instala un manejador de procesos de nodejs, se instala: PM2 (http://pm2.keymetrics.io/)
 
@@ -132,18 +132,35 @@ ponerlo como un servicio, para cuando baje y suba el sistema:
 abrir los puertos en el firewall que utilizara la app:
 
     # firewall-cmd --zone=public --add-port=3000/tcp --permanent
-    
     # firewall-cmd --reload
-    
     # firewall-cmd --list-all
     
 como medida desesperada, puede parar y desactivar el firewalld, cosa que no es recomendable:
 
-    # systemctl stop firewalld
-    
+    # systemctl stop firewalld   
     # systemctl disable firewalld
-    
     # systemctl start firewalld
+    
+
+Instalar NGINX:
+
+    # yum install -y nginx
+    
+    # systemctl enable nginx
+    # systemctl start nginx
+    
+Abrir el puerto 80
+    
+    # firewall-cmd --zone=public --add-port=3000/tcp --permanent
+    # firewall-cmd --reload
+    
+MUY MUY IMPORTANTE: Deshabilitar SELINUX
+
+    # vim /etc/sysconfig/selinux
+    
+          SELINUX=disabled
+    # reboot
+    
     
     
 
