@@ -153,12 +153,12 @@ ponerlo como un servicio, para cuando baje y suba el sistema:
 
 Esta aplicaciones se van a diferenciar por path asi:
 
-app1: http://ip_server/nodeArticulos
-app2: http://ip_server/rubyArticulos
+      app1: http://ip_server/nodeArticulos
+      app2: http://ip_server/rubyArticulos
 
 debe configurar tanto la configuración de la aplicación, como la configuración de NGINX:
 
-1. en la Aplicación app1: se debe garantizar que las páginas HTML generadas por templates HTML (ejs) y los redirect o send de las respuestas de los controladores, se incluya el path: "nodeArticulos".
+### en la Aplicación app1: se debe garantizar que las páginas HTML generadas por templates HTML (ejs) y los redirect o send de las respuestas de los controladores, se incluya el path: "nodeArticulos".
 
 En este ejemplo debe actualizar "config/config.js" con el path apropiado y en el ambiente que correra este servidor (test en este caso), en este caso "nodeArticulos":
 
