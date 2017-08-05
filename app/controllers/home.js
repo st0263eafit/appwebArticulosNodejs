@@ -35,7 +35,7 @@ router.post('/newarticle', function(req, res, next) {
   });
   newArticulo.save(function(err, newArticulo) {
     if (err) return next(err);
-    res.redirect(config.base_url);
+    res.redirect(config.baseUrl);
   });
 });
 
@@ -61,7 +61,7 @@ router.get('/findbytitle', function(req, res, next) {
 router.get('/articles', function(req, res, next) {
   Article.find(function(err, articles) {
     if (err) return next(err);
-    res.redirect(config.base_url);
+    res.redirect(config.baseUrl);
   });
 });
 
@@ -72,7 +72,7 @@ router.get('/articles', function(req, res, next) {
 router.get('/delarticle', function(req, res, next) {
   Article.findByIdAndRemove(req.query.id, function(err, result) {
     if (err) return next(err);
-    res.redirect(config.base_url);
+    res.redirect(config.baseUrl);
   });
 });
 
@@ -83,6 +83,6 @@ router.get('/delarticle', function(req, res, next) {
 router.delete('/delarticle/:id', function(req, res, next) {
   Article.findByIdAndRemove(req.params.id, function(err, result) {
     if (err) return next(err);
-    res.redirect(config.base_url);
+    res.redirect(config.baseUrl);
   });
 });
