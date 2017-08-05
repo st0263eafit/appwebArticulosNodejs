@@ -4,6 +4,7 @@ var path = require('path'),
 
 var config = {
   development: {
+    baseUrl: "/",
     root: rootPath,
     app: {
       name: 'articulos'
@@ -13,6 +14,7 @@ var config = {
   },
 
   test: {
+    baseUrl: "/articulos/",
     root: rootPath,
     app: {
       name: 'articulos'
@@ -22,6 +24,7 @@ var config = {
   },
 
   production: {
+    baseUrl: "/",
     root: rootPath,
     app: {
       name: 'articulos'

@@ -114,8 +114,7 @@ article:
 
 # 4. Desarrollo:
 
-# 5. Implementación o Despliegue:
+# 5. Despliegue en el DCA:
 
-5.1 despliegue en el data center academico:
-
-la primera vez:
+Sistema Operativo: Centos 7.1
+Servidor Web: Apache Web Server -> con proxy inverso
