@@ -205,4 +205,39 @@ Cambien las páginas .ejs que tengan relación con las acciones o rutas, ejemplo
       .
       .
 
+### Configuración del proxy inverson en NGINX para cada aplicación:
+
+      // /etc/nginx/nginx.config
+      .
+      .
+      server {
+        listen       80 default_server;
+        listen       [::]:80 default_server;
+        server_name  10.131.137.236;
+        root         /usr/share/nginx/html;
+      .
+      .
+      location / {
+        root /usr/share/nginx/html;
+        index index.html index.htm;
+      }
+
+      location /nodeArticulos/ {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header HOST $http_host;
+        proxy_set_header X-NginX-Proxy true;
+        proxy_pass http://127.0.0.1:3000/;
+        proxy_redirect off;
+      }
+      location /rubyArticulos/ {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header HOST $http_host;
+        proxy_set_header X-NginX-Proxy true;
+        proxy_pass http://127.0.0.1:4000/;
+        proxy_redirect off;
+      }
+      .
+      .
+
+
 # 5. Despliege en Heroku
