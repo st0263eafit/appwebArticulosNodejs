@@ -14,7 +14,7 @@ var config = {
   },
 
   test: {
-    baseUrl: "/articulos/",
+    baseUrl: "/NodeArticulos/",
     root: rootPath,
     app: {
       name: 'articulos'
