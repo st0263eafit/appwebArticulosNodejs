@@ -107,9 +107,46 @@ ver pág: https://www.liquidweb.com/kb/how-to-install-mongodb-on-centos-7/
 ## se instala NGINX
 
       user1$ sudo yum install nginx
+      user1$ sudo systemctl enable nginx
+      user1$ sudo systemctl start nginx
+
+Abrir el puerto 80
+
+      user1$ sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+      user1$ sudo firewall-cmd --reload
+
+## abrir los puertos en el firewall que utilizara la app:
+
+      user1$ firewall-cmd --zone=public --add-port=3000/tcp --permanent
+      user1$ firewall-cmd --reload
+      user1$ firewall-cmd --list-all
+
+como medida desesperada, puede parar y desactivar el firewalld, cosa que no es recomendable:
+      user1$ sudo systemctl stop firewalld   
+      user1$ sudo systemctl disable firewalld
+      user1$ sudo systemctl start firewalld
 
 ## se instala Apache Web Server
 
       user1$ sudo yum install httpd
+
+## se instala un manejador de procesos de nodejs, se instala: PM2 (http://pm2.keymetrics.io/)
+
+      user1$ npm install -g pm2
+      user1$ cd articulosEM
+      user1$ pm2 start app.ps
+      user1$ pm2 list
+
+ponerlo como un servicio, para cuando baje y suba el sistema:    
+
+      user1$ sudo pm2 startup systemd
+
+## MUY MUY IMPORTANTE: Deshabilitar SELINUX
+
+          user1$ sudo vim /etc/sysconfig/selinux
+
+                SELINUX=disabled
+
+          user1$ sudo reboot      
 
 # 5. Despliege en Heroku
