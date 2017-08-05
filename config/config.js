@@ -19,7 +19,7 @@ var config = {
     app: {
       name: 'articulos'
     },
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 4000,
     db: 'mongodb://localhost/articulosem-test'
   },
 
@@ -29,7 +29,7 @@ var config = {
     app: {
       name: 'articulos'
     },
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 5000,
     db: 'mongodb://localhost/articulos-production'
   }
 };
