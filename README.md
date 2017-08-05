@@ -149,4 +149,60 @@ ponerlo como un servicio, para cuando baje y suba el sistema:
 
           user1$ sudo reboot      
 
+## CONFIGURAR UN SERVIDOR NGINX PARA MULTIPLES APLICACIONES
+
+Esta aplicaciones se van a diferenciar por path asi:
+
+app1: http://ip_server/nodeArticulos
+app2: http://ip_server/rubyArticulos
+
+debe configurar tanto la configuración de la aplicación, como la configuración de NGINX:
+
+1. en la Aplicación app1: se debe garantizar que las páginas HTML generadas por templates HTML (ejs) y los redirect o send de las respuestas de los controladores, se incluya el path: "nodeArticulos".
+
+En este ejemplo debe actualizar "config/config.js" con el path apropiado y en el ambiente que correra este servidor (test en este caso), en este caso "nodeArticulos":
+
+      // config/config.js
+      .
+      .
+      test: {
+        baseUrl: "/nodeArticulos/",
+        root: rootPath,
+        app: {
+          name: 'articulos'
+        },
+        port: process.env.PORT || 4000,
+        db: 'mongodb://localhost/articulosem-test'
+      },
+      .
+      .
+      .
+
+note que los redirect de los controladores, lo hacen con base en baseUrl, y envian esta variable a las páginas .ejs, ejemplo:
+
+      // app/controllers/home.js
+      .
+      .
+      res.render('index', {
+        title: 'Gestión de Articulos',
+        baseUrl: config.baseUrl,
+        articles: articles
+      });
+      .
+      .
+      newArticulo.save(function(err, newArticulo) {
+        if (err) return next(err);
+        res.redirect(config.baseUrl);
+      });
+
+Cambien las páginas .ejs que tengan relación con las acciones o rutas, ejemplo:
+
+      // app/views/index.ejs
+      .
+      .
+      <form action="<%=baseUrl%>newarticle" method="POST">
+        <input type="text" placeholder="title" name="title">      
+      .
+      .
+
 # 5. Despliege en Heroku
