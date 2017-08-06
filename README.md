@@ -205,7 +205,7 @@ Cambien las páginas .ejs que tengan relación con las acciones o rutas, ejemplo
       .
       .
 
-### Configuración del proxy inverson en NGINX para cada aplicación:
+### Configuración del proxy inverso en NGINX para cada aplicación:
 
       // /etc/nginx/nginx.config
       .
