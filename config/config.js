@@ -4,6 +4,7 @@ var path = require('path'),
 
 var config = {
   development: {
+    baseUrl: "/",
     root: rootPath,
     app: {
       name: 'articulos'
@@ -13,20 +14,22 @@ var config = {
   },
 
   test: {
+    baseUrl: "/nodeArticulos/",
     root: rootPath,
     app: {
       name: 'articulos'
     },
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 4000,
     db: 'mongodb://localhost/articulosem-test'
   },
 
   production: {
+    baseUrl: "/",
     root: rootPath,
     app: {
       name: 'articulos'
     },
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 5000,
     db: 'mongodb://localhost/articulos-production'
   }
 };
