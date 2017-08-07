@@ -30,7 +30,7 @@ var config = {
       name: 'articulos'
     },
     port: process.env.PORT || 5000,
-    db: 'mongodb://<dbuser>:<dbpassword>@ds163397.mlab.com:63397/emontoya'
+    db: 'mongodb://emontoya:Amoeba67.@ds163397.mlab.com:63397/emontoya'
   }
 };
 
