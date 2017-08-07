@@ -296,4 +296,11 @@ debe cambiar el string de conexión a la base de datos en producción en config.
           https://afternoon-ocean-97432.herokuapp.com/ | https://git.heroku.com/afternoon-ocean-97432.git
 
           user1$ git push heroku master
-          
+
+Queda en producción en:
+
+            https://afternoon-ocean-97432.herokuapp.com/
+
+/////
+
+@20172            
