@@ -117,9 +117,9 @@ Abrir el puerto 80
 
 ## abrir los puertos en el firewall que utilizara la app:
 
-      user1$ firewall-cmd --zone=public --add-port=3000/tcp --permanent
-      user1$ firewall-cmd --reload
-      user1$ firewall-cmd --list-all
+      user1$ sudo firewall-cmd --zone=public --add-port=3000/tcp --permanent
+      user1$ sudo firewall-cmd --reload
+      user1$ sudo firewall-cmd --list-all
 
 como medida desesperada, puede parar y desactivar el firewalld, cosa que no es recomendable:
       user1$ sudo systemctl stop firewalld   
@@ -130,16 +130,37 @@ como medida desesperada, puede parar y desactivar el firewalld, cosa que no es r
 
       user1$ sudo yum install httpd
 
+## descargar el proyecto github
+
+      user1$ mkdir apps
+      user1$ cd apps
+      user1$ git clone https://github.com/st0263eafit/appwebArticulosNodejs.git
+      user1$ cd appwebArticulosNodejs
+      user1$ npm install
+
+      * ensaye la Aplicación
+
+      user1$ npm start
+
+      por defecto abre el puerto 3000, entre a un browser y digite: http://ip-servidor:3000
+
+      cuando termine de probar, detenga la aplicación (^C)
+
+      user1$
+
 ## se instala un manejador de procesos de nodejs, se instala: PM2 (http://pm2.keymetrics.io/)
 
       user1$ npm install -g pm2
-      user1$ cd articulosEM
-      user1$ pm2 start app.ps
+      user1$ cd apps
+      user1$ cd appwebArticulosNodejs
+      user1$ pm2 start app.js
       user1$ pm2 list
 
 ponerlo como un servicio, para cuando baje y suba el sistema:    
 
-      user1$ sudo pm2 startup systemd
+      user1$ pm2 startup systemd
+
+      una vez ejecutado este comando, le indicará las instrucciones para dejarlo como un servicio.
 
 ## MUY MUY IMPORTANTE: Deshabilitar SELINUX
 
