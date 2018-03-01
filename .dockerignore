@@ -1,0 +1,5 @@
+.DS_Store
+.gitignore
+README.md
+k8s/
+Dockerfile
