@@ -3,3 +3,6 @@ public/components
 .nyc_output
 .sass-cache
 .idea/
+k8s/persistentvolume.yml
+k8s/volumeclaim.yml
+k8s/storageclass.yml

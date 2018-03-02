@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: articulos-webapp-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: articulos-webapp
+    spec:
+      containers:
+      - name: articulos-webapp
+        image: mbaquer6/articulonode:1.2
+        imagePullPolicy: Always
+        ports:
+        - name: nodejs-port
+          containerPort: 3000
+      - name: api-nginx
+        image: nginx:1.13.8
+        ports:
+        - name: http-port
+          containerPort: 80
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/nginx/conf.d
+      volumes:
+      - name: config-volume
+        configMap:
+          name: webapp-nginx-config
+          items:
+          - key: nginx.conf
+            path: nginx.conf
