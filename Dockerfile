@@ -6,15 +6,11 @@ LABEL maintainer="Miguel B mbaquer6@eafit.edu.co"
 
 ARG PORT=3000
 ENV PORT $PORT
-EXPOSE $PORT 5858 9229
 
-HEALTHCHECK CMD curl -fs http://localhost:$PORT/healthz || exit 
-
-WORKDIR "/opt/app"
+WORKDIR /nodeApp
 COPY . ./
-RUN chown -R node:node .
 
-USER node
 RUN npm install --production
 
+EXPOSE 3000
 CMD npm start

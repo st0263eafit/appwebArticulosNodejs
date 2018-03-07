@@ -10,7 +10,7 @@ var config = {
       name: 'articulos'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/articulosem-development'
+    db: 'mongodb://mongo/articulosem-development'
   },
 
   test: {
@@ -20,7 +20,7 @@ var config = {
       name: 'articulos'
     },
     port: process.env.PORT || 4000,
-    db: 'mongodb://localhost/articulosem-test'
+    db: 'mongodb://mongo/articulosem-test'
   },
 
   production: {
