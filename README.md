@@ -101,6 +101,7 @@ Descargar el instalador grafico oficial de [Docker](https://docs.docker.com/dock
       $ mkdir apps
       $ cd apps
       $ git clone https://github.com/st0263eafit/appwebArticulosNodejs.git
+      $ git checkout dockerized
       $ cd appwebArticulosNodejs
 
 ## Se ejecuta el docker-compose
