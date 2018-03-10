@@ -15,6 +15,6 @@ COPY . ./
 RUN chown -R node:node .
 
 USER node
-RUN npm install --production
+RUN npm update && npm install --test
 
 CMD npm start
