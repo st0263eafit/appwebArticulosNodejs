@@ -340,15 +340,21 @@ Reemplazar en los manifiestos de Kubernetes en el directorio k8s:
 Para hacer el deploy a partir de los manifiestos, ejecutar desde el directorio raiz del código:
 
 kubectl create -f k8s/
+
 Kubectl create configmap webapp-nginx-config —from-file=configmap/nginx.conf
 
 ## 6.3 Limpiar la instalación
 
 Para limpiar la instalación:
+
 kubectl -n { namespace } delete rc --all
+
 kubectl -n { namespace }  delete svc --all
+
 kubectl -n { namespace }  delete deployment --all
+
 kubectl -n { namespace }  delete ingress --all
+
 Kubectl -n { namespace }  delete configmap webapp-nginx-config
 
 /////
