@@ -328,34 +328,31 @@ Queda en producción en:
 
 En el directorio raiz del código descargado ejecutar:
 
-docker image build -t { docker hub user }/artnode:{ version } .
-docker image push { docker hub user }/artnode:{ version }
+            docker image build -t { docker hub user }/artnode:{ version } .
+            docker image push { docker hub user }/artnode:{ version }
 
 Reemplazar en los manifiestos de Kubernetes en el directorio k8s:
 { namespace } = grupo ej proyecto1
 { user } = usuario de Docker hub
 { versiontag } = versión de la imagen en Docker hub
+En Linux:
+            export 
 
 ## 6.2 Despliegue en cluster de Kubernetes 
 Para hacer el deploy a partir de los manifiestos, ejecutar desde el directorio raiz del código:
 
-kubectl create -f k8s/
-
-Kubectl create configmap webapp-nginx-config —from-file=configmap/nginx.conf
+            kubectl create -f k8s/
+            Kubectl create configmap webapp-nginx-config —from-file=configmap/nginx.conf
 
 ## 6.3 Limpiar la instalación
 
 Para limpiar la instalación:
 
-kubectl -n { namespace } delete rc --all
-
-kubectl -n { namespace }  delete svc --all
-
-kubectl -n { namespace }  delete deployment --all
-
-kubectl -n { namespace }  delete ingress --all
-
-Kubectl -n { namespace }  delete configmap webapp-nginx-config
+            kubectl -n { namespace } delete rc --all
+            kubectl -n { namespace }  delete svc --all
+            kubectl -n { namespace }  delete deployment --all
+            kubectl -n { namespace }  delete ingress --all
+            Kubectl -n { namespace }  delete configmap webapp-nginx-config
 
 /////
 
