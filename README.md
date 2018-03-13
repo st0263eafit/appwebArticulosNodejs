@@ -336,9 +336,9 @@ Reemplazar en los manifiestos de Kubernetes en el directorio k8s:
 { user } = usuario de Docker hub
 { versiontag } = versión de la imagen en Docker hub
 En Linux:
-            export 
+            export
 
-## 6.2 Despliegue en cluster de Kubernetes 
+## 6.2 Despliegue en cluster de Kubernetes
 Para hacer el deploy a partir de los manifiestos, ejecutar desde el directorio raiz del código:
 
             kubectl create -f k8s/
@@ -356,4 +356,4 @@ Para limpiar la instalación:
 
 /////
 
-@20172            
+@20181            
