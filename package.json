@@ -18,13 +18,13 @@
     "body-parser": "^1.13.3",
     "compression": "^1.5.2",
     "method-override": "^2.3.0",
-    "glob": "^6.0.4",
-    "mongoose": "^4.1.2",
+    "glob": "^7.1.2",
+    "mongoose": "^5.0.9",
     "ejs": "^2.3.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "debug": "^2.2.0",
+    "debug": "^3.1.0",
     "gulp": "^3.9.0",
     "gulp-nodemon": "^2.0.2",
     "gulp-livereload": "^3.8.0",

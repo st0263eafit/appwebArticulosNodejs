@@ -1,6 +1,6 @@
 var path = require('path'),
     rootPath = path.normalize(__dirname + '/..'),
-    env = process.env.NODE_ENV || 'development';
+    env = process.env.NODE_ENV || 'test';
 
 var config = {
   development: {
@@ -10,7 +10,7 @@ var config = {
       name: 'articulos'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://mongo/articulosem-development'
+    db: 'mongodb://localhost/articulosem-development'
   },
 
   test: {
@@ -20,7 +20,7 @@ var config = {
       name: 'articulos'
     },
     port: process.env.PORT || 4000,
-    db: 'mongodb://mongo/articulosem-test'
+    db: 'mongodb://mongo-server/articulosem-test'
   },
 
   production: {
