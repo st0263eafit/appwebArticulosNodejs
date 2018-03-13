@@ -52,10 +52,10 @@ article:
 
 ## 3.2 Servicios Web
 
-/* Servicio Web: Inserta un registro de Articulo en la Base de datos
+  /* Servicio Web: Inserta un registro de Articulo en la Base de datos
   Método: POST
   URI: /newarticle
-*/
+  */
 
 /* Servicio Web: Realiza la búsqueda en la base de datos, por campo titulo
   Método: GET
@@ -92,16 +92,16 @@ article:
 
 Descargar el instalador grafico oficial de [Docker](https://docs.docker.com/docker-for-windows/install/)
 
-### Windows
+### OSX
 
 Descargar el instalador grafico oficial de [Docker](https://docs.docker.com/docker-for-mac/install/)
 
-## descargar el proyecto github
+## Descargar el proyecto github
 
+      $ cd /tmp/
       $ mkdir apps
       $ cd apps
       $ git clone https://github.com/st0263eafit/appwebArticulosNodejs.git
-      $ git checkout dockerized
       $ cd appwebArticulosNodejs
 
 ## Se ejecuta el docker-compose
