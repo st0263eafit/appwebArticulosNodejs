@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ReplicationController
 metadata:
   name: mongo-server
+  namespace: emontoya
 spec:
   replicas: 1
   selector:
@@ -11,6 +12,7 @@ spec:
       name: mongo-server
       labels:
         app: mongo-server
+        namespace: { namespace }
     spec:
       containers:
       - name: mongo
@@ -18,21 +20,3 @@ spec:
         ports:
         - name: redis-port
           containerPort: 27017
-        volumeMounts:
-        - name: mongo-data
-          mountPath: /data/db
-        # - name: mongo-configdb
-        #   mountPath: /data/configdb
-      # volumes:
-      # - name: mongo-data
-      #   nfs:
-      #     server: nas.dis.eafit.edu.co
-      #     path: /mnt/NASVOL1/kubernetes/volumes/
-      #     readOnly: false
-      volumes:
-      - name: mongo-data
-        persistentVolumeClaim:
-          claimName: mongo-data
-      # - name: mongo-configdb
-      #   persistentVolumeClaim:
-      #     claimName: mongo-configdb
