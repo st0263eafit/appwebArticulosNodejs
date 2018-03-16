@@ -341,8 +341,8 @@ En Linux:
 ## 6.2 Despliegue en cluster de Kubernetes
 Para hacer el deploy a partir de los manifiestos, ejecutar desde el directorio raiz del código:
 
-            kubectl create -f k8s/
-            Kubectl -n emontoya create configmap webapp-nginx-config —from-file=configmap/nginx.conf
+            kubectl -n emontoya create -f k8s/
+            kubectl -n emontoya create configmap webapp-nginx-config —from-file=configmap/nginx.conf
 
 ## 6.3 Limpiar la instalación
 
