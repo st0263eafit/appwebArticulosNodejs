@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: articulos-webapp-deployment
-  namespace: { namespace }
+  namespace: emontoya
 spec:
   replicas: 2
   template:
@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: articulos-webapp
-        image: { user }/artnode:{ versiontag }
+        image: emontoya/artnode:1.0
         ports:
         - name: nodejs-port
           containerPort: 4000
