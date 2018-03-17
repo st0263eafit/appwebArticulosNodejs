@@ -1,35 +1,26 @@
 # NodeJS articulosEM
 
-By: Edwin Montoya Munera - emontoya@eafit.educo
+By: Edwin Montoya Munera - emontoya@eafit.edu.co
 
-# Descripción de aplicación
+# 1. Analisis y Diseño
 
-Aplicación web que permite gestionar Articulos, un CRUD básico de (title, url y description) por Artículo.
+* [Análisis y Diseño](analisis-diseno.md)
 
-Ejemplo de clase, a modo de tutorial, que cubre:
+# 2. Despligue en un Servidor Centos 7.x en el DCA
 
-* Aplicación del patron MVC a una aplicación Web
-* Uso de un framework backend moderno -> NodeJS
-* Configuración de ambientes: Desarrollo, Pruebas y Producción.
+* [Despliegue en DCA](deploy-on-dca.md)
 
-# 1. Análisis
+# 3. Despliege en Heroku
 
-## 1.1 Requisitos funcionales:
+* [Despliegue en Heroku](deploy-on-heroku.md)
 
-1. Crear Articulo.
-2. Buscar articulo por parte del titulo
-3. Borrar articulo por Id de articulo
-4. Listar todos los articulos de la base de datos en la página home o index
+# 4. Despliege en Docker
 
-## 1.2 Definición de tecnología de desarrollo y despliegue para la aplicación:
+* [Despliegue en Docker](deploy-on-docker.md)
 
-* Lenguaje de Programación: Javascript
-* Framework web backend: NodeJS - Express
-* Framework web frontend: no se usa - se utilizará Templates HTML para Vista (V)
-* Base de datos: MongoDB
-* Web App Server: NodeJS
-* Web Server: NGINX y Apache Web Server
+# 5. Despliegue en Kubernetes
 
+<<<<<<< HEAD
 # 2. Desarrollo
 
 Se generó la base, con Yeoman:
@@ -351,6 +342,9 @@ Para limpiar la instalación:
       kubectl -n emontoya  delete deployment --all
       kubectl -n emontoya  delete ingress --all
       kubectl -n emontoya  delete configmap webapp-nginx-config
+=======
+* [Despliegue en Kubernetes](deploy-on-kubernetes.md)
+>>>>>>> master
 
 /////
 

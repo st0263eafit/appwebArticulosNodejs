@@ -19,7 +19,7 @@ var config = {
     app: {
       name: 'articulos'
     },
-    port: process.env.PORT || 4000,
+    port: process.env.PORT || 3000,
     db: 'mongodb://mongo-server/articulosem-test'
   },
 
@@ -29,7 +29,7 @@ var config = {
     app: {
       name: 'articulos'
     },
-    port: process.env.PORT || 5000,
+    port: process.env.PORT || 3000,
     db: 'mongodb://emontoya:*******@ds163397.mlab.com:63397/emontoya'
   }
 };
