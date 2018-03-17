@@ -54,6 +54,7 @@ Para limpiar la instalación:
       $ kubectl -n <namespace> delete deployment --all
       $ kubectl -n <namespace> delete ingress --all
       $ kubectl -n <namespace> delete configmap webapp-nginx-config
+      $ kubectl -n <namespace> delete service --all
 
 /////
 
