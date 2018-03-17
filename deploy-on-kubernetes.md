@@ -4,16 +4,29 @@ By: Edwin Montoya Munera - emontoya@eafit.edu.co
 
 ## Prerrequisitos
 
-1. Instalar docker en la máquina 'Dev'
+### 1. Instalar docker en la máquina 'Dev'
 
-2. Tener un usuario y Certificados de acceso (el profesor suministrará las claves y certificados), estos deben ser copiados en:
+### 2. Crear las imagenes de la aplicación (build) y subirlas (push) a docker hub
+
+En el directorio raiz del código descargado ejecutar:
+
+      docker image build -t <docker_hub_user>/artnode:<version> .
+      docker image push <docker_hub_user>/artnode:<version>
+
+Reemplazar en los manifiestos de Kubernetes en el directorio k8s:
+
+      <namespace> = grupo ej proyecto1
+      <docker_hub_user> = usuario de Docker hub
+      <version> = versión de la imagen en Docker hub
+
+### 3. Tener un usuario y Certificados de acceso (el profesor suministrará las claves y certificados), estos deben ser copiados en:
 
       certificados descargados en: proyecto#/ o donde lo haya hecho.
 
             $ mkdir $HOME/.kube
             $ cp -r proyecto#/* $HOME/.kube/
 
-3. Instalar un cliente kubectl 
+### 4. Instalar un cliente kubectl 
 
       https://kubernetes.io/docs/tasks/tools/install-kubectl/
 
@@ -27,16 +40,7 @@ En Linux:
 
 ## Personalizar los manifiestos para cada grupo
 
-En el directorio raiz del código descargado ejecutar:
-
-      docker image build -t <docker_hub_user>/artnode:<version> .
-      docker image push <docker_hub_user>/artnode:<version>
-
-Reemplazar en los manifiestos de Kubernetes en el directorio k8s:
-
-      <namespace> = grupo ej proyecto1
-      <docker_hub_user> = usuario de Docker hub
-      <version> = versión de la imagen en Docker hub
+Ir al directorio 'k8s' y realizar el cambio de <namespace> por el usuario o proyecto especifico. Ej: 'emontoya', 'st0263', 'proyecto4'
 
 ## Despliegue en cluster de Kubernetes
 
