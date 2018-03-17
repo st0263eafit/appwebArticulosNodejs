@@ -1,6 +1,6 @@
 # NodeJS articulosEM
 
-By: Edwin Montoya Munera - emontoya@eafit.educo
+By: Edwin Montoya Munera - emontoya@eafit.edu.co
 
 # Descripción de aplicación
 
@@ -52,10 +52,10 @@ article:
 
 ## 3.2 Servicios Web
 
-  /* Servicio Web: Inserta un registro de Articulo en la Base de datos
+/* Servicio Web: Inserta un registro de Articulo en la Base de datos
   Método: POST
   URI: /newarticle
-  */
+*/
 
 /* Servicio Web: Realiza la búsqueda en la base de datos, por campo titulo
   Método: GET
@@ -76,38 +76,3 @@ article:
    Método: DELETE
    URI: /delarticle/id
   */
-
-# 4. Correr el código en contenedores de Docker
-
-## Instalar Docker
-
-### Ubuntu
-
-    $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-    $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu$(lsb_release -cs) stable"
-   $ sudo apt-get update
-   $ sudo apt-get install docker-ce
-
-### Windows
-
-Descargar el instalador grafico oficial de [Docker](https://docs.docker.com/docker-for-windows/install/)
-
-### OSX
-
-Descargar el instalador grafico oficial de [Docker](https://docs.docker.com/docker-for-mac/install/)
-
-## Descargar el proyecto github
-
-      $ cd /tmp/
-      $ mkdir apps
-      $ cd apps
-      $ git clone https://github.com/st0263eafit/appwebArticulosNodejs.git
-      $ cd appwebArticulosNodejs
-
-## Se ejecuta el docker-compose
-
-    $ docker-compose up
-
-comprobar la ejecución con un browser y visitar la URL [0.0.0.0:3000](0.0.0.0:3000)
-
-@20181            
