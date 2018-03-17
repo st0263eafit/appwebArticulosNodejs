@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: articulos-webapp-deployment
-  namespace: { namespace }
+  namespace: <namespace>
 spec:
   replicas: 2
   template:
@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: articulos-webapp
-        image: { user }/artnode:{ versiontag }
+        image: <docker_hub_user>/artnode:<version>
         ports:
         - name: nodejs-port
           containerPort: 4000

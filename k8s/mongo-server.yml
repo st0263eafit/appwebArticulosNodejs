@@ -12,11 +12,11 @@ spec:
       name: mongo-server
       labels:
         app: mongo-server
-        namespace: { namespace }
+        namespace: <namespace>
     spec:
       containers:
       - name: mongo
         image: mongo:3.6.3-jessie
         ports:
-        - name: redis-port
+        - name: mongo-port
           containerPort: 27017
