@@ -13,9 +13,6 @@ En el directorio raiz del código descargado ejecutar:
       docker image build -t <docker_hub_user>/artnode:<version> .
       docker image push <docker_hub_user>/artnode:<version>
 
-Reemplazar en los manifiestos de Kubernetes en el directorio k8s:
-
-      <namespace> = grupo ej proyecto1
       <docker_hub_user> = usuario de Docker hub
       <version> = versión de la imagen en Docker hub
 
@@ -40,7 +37,13 @@ En Linux:
 
 ## Personalizar los manifiestos para cada grupo
 
-Ir al directorio 'k8s' y realizar el cambio de <namespace> por el usuario o proyecto especifico. Ej: 'emontoya', 'st0263', 'proyecto4'
+Ir al directorio 'k8s/' y realizar el cambio de <namespace> por el usuario o proyecto especifico. Ej: 'emontoya', 'st0263', 'proyecto4'
+
+Reemplazar en los manifiestos de Kubernetes en el directorio k8s/:
+
+      <namespace> = grupo, ej proyecto1
+      <docker_hub_user> = usuario de Docker hub
+      <version> = versión de la imagen en Docker hub
 
 ## Despliegue en cluster de Kubernetes
 
