@@ -164,11 +164,11 @@ ponerlo como un servicio, para cuando baje y suba el sistema:
 
 ## MUY MUY IMPORTANTE: Deshabilitar SELINUX
 
-          user1$ sudo vim /etc/sysconfig/selinux
+      user1$ sudo vim /etc/sysconfig/selinux
 
-                SELINUX=disabled
+          SELINUX=disabled
 
-          user1$ sudo reboot      
+      user1$ sudo reboot      
 
 ## CONFIGURAR UN SERVIDOR NGINX PARA MULTIPLES APLICACIONES
 
@@ -328,31 +328,29 @@ Queda en producción en:
 
 En el directorio raiz del código descargado ejecutar:
 
-            docker image build -t emontoya/artnode:1.0 .
-            docker image push emontoya/artnode:1.0
+      docker image build -t emontoya/artnode:1.0 .
+      docker image push emontoya/artnode:1.0
 
-Reemplazar en los manifiestos de Kubernetes en el directorio k8s:
-{ namespace } = grupo ej proyecto1
-{ user } = usuario de Docker hub
-{ versiontag } = versión de la imagen en Docker hub
 En Linux:
-            export KUBECONFIG=$HOME/.kube/kubeconfig
+
+      export KUBECONFIG=$HOME/.kube/kubeconfig
 
 ## 6.2 Despliegue en cluster de Kubernetes
+
 Para hacer el deploy a partir de los manifiestos, ejecutar desde el directorio raiz del código:
 
-            kubectl -n emontoya create -f k8s/
-            kubectl -n emontoya create configmap webapp-nginx-config —from-file=configmap/nginx.conf
+      kubectl -n emontoya create -f k8s/
+      kubectl -n emontoya create configmap webapp-nginx-config --from-file=k8s/configmap/nginx.conf
 
 ## 6.3 Limpiar la instalación
 
 Para limpiar la instalación:
 
-            kubectl -n emontoya delete rc --all
-            kubectl -n emontoya  delete svc --all
-            kubectl -n emontoya  delete deployment --all
-            kubectl -n emontoya  delete ingress --all
-            Kubectl -n emontoya  delete configmap webapp-nginx-config
+      kubectl -n emontoya delete rc --all
+      kubectl -n emontoya  delete svc --all
+      kubectl -n emontoya  delete deployment --all
+      kubectl -n emontoya  delete ingress --all
+      kubectl -n emontoya  delete configmap webapp-nginx-config
 
 /////
 
