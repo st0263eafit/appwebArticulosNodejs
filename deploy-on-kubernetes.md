@@ -8,10 +8,10 @@ By: Edwin Montoya Munera - emontoya@eafit.edu.co
 
 2. Tener un usuario y Certificados de acceso (el profesor suministrará las claves y certificados), estos deben ser copiados en:
 
-      certificados en: ./certificados/
+      certificados descargados en: proyecto#/ o donde lo haya hecho.
 
-      $ mkdir $HOME/.kube
-      $ cp -r certificados/* $HOME/.kube/
+            $ mkdir $HOME/.kube
+            $ cp -r proyecto#/* $HOME/.kube/
 
 3. Instalar un cliente kubectl 
 
