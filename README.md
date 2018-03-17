@@ -324,7 +324,30 @@ Queda en producción en:
 
 ## 6. Despliegue en Kubernetes
 
-## 6.1 Personalizar los manifiestos para cada grupo
+## 6.1 Prerrequisitos
+
+1. Instalar docker en la máquina 'Dev'
+
+2. Tener un usuario y Certificados de acceso (el profesor suministrará las claves y certificados), estos deben ser copiados en:
+
+      certificados en: ./certificados/
+
+      $ mkdir $HOME/.kube
+      $ cp -r certificados/* $HOME/.kube/
+
+3. Instalar un cliente kubectl 
+
+      https://kubernetes.io/docs/tasks/tools/install-kubectl/
+
+      
+Seguir las guias de instalación para cada sistema operativo, y luego:
+
+En Linux:
+
+      $ export KUBECONFIG=$HOME/.kube/kubeconfig
+
+
+## 6.2 Personalizar los manifiestos para cada grupo
 
 En el directorio raiz del código descargado ejecutar:
 
@@ -337,11 +360,7 @@ Reemplazar en los manifiestos de Kubernetes en el directorio k8s:
       <docker_hub_user> = usuario de Docker hub
       <version> = versión de la imagen en Docker hub
 
-En Linux:
-
-      $ export KUBECONFIG=$HOME/.kube/kubeconfig
-
-## 6.2 Despliegue en cluster de Kubernetes
+## 6.3 Despliegue en cluster de Kubernetes
 
 Para hacer el deploy a partir de los manifiestos, ejecutar desde el directorio raiz del código:
 
@@ -349,7 +368,7 @@ Para hacer el deploy a partir de los manifiestos, ejecutar desde el directorio r
       $ kubectl -n <namespace> create configmap webapp-nginx-config --from-file=k8s/configmap/nginx.conf
 
 
-## 6.3 Limpiar la instalación
+## 6.4 Limpiar la instalación
 
 Para limpiar la instalación:
 
