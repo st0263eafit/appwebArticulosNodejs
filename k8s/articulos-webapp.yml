@@ -2,11 +2,8 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: articulos-webapp-deployment
-<<<<<<< HEAD
   namespace: emontoya
-=======
-  namespace: <namespace>
->>>>>>> master
+
 spec:
   replicas: 2
   template:
@@ -16,14 +13,11 @@ spec:
     spec:
       containers:
       - name: articulos-webapp
-<<<<<<< HEAD
         image: emontoya/artnode:1.0
-=======
-        image: <docker_hub_user>/artnode:<version>
->>>>>>> master
+
         ports:
         - name: nodejs-port
-          containerPort: 4000
+          containerPort: 3000
       - name: api-nginx
         image: nginx:1.13.8
         ports:

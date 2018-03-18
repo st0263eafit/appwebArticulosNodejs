@@ -34,8 +34,8 @@ Descargar el instalador grafico oficial de [Docker](https://docs.docker.com/dock
 Construir el contenedor nodejs+app:
 
   $ cd appwebArticulosNodejs
-  $ docker image build -t <docker_hub_user>/artnode:<version> .
-  $ docker image push <docker_hub_user>/artnode:<version>
+  $ docker image build -t emontoya/artnode:1.0 .
+  $ docker image push emontoya/artnode:1.0
 
 Adquirir el contenedor oficial de mongo:
 
