@@ -56,7 +56,7 @@ Descargar el instalador grafico oficial de [Docker](https://docs.docker.com/dock
 
 * borrar una imagen:
 
-      $ docker image rm >image_id>
+      $ docker image rm <image_id>
 
 
 * lista contenedores en ejecución: 
