@@ -15,7 +15,7 @@ spec:
         image: <docker_hub_user>/artnode:<version>
         ports:
         - name: nodejs-port
-          containerPort: 4000
+          containerPort: 3000
       - name: api-nginx
         image: nginx:1.13.8
         ports:
