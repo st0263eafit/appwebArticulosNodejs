@@ -1,17 +1,27 @@
 version: "2"
 services:
-  mongo:
-    container_name: mongo
-    image: mongo
+  nginx:
+    container_name: nginx-server
+    image: nginx
     volumes:
-      - ./data:/data/db
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
-      - "27017:27017"
-  app:
-    container_name: app
+      - "80:80"
+    depends_on:
+      - nodeapp
+  nodeapp:
+    container_name: nodeapp
     restart: always
     build: .
     ports:
       - "3000:3000"
     depends_on:
-      - mongo
+      - mongo-server      
+  mongo-server:
+    container_name: mongo-server
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+
