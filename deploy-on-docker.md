@@ -33,20 +33,20 @@ Descargar el instalador grafico oficial de [Docker](https://docs.docker.com/dock
 
 1. Adquirir el contenedor oficial de mongo:
 
-      $ docker pull mongo
-      $ docker run --name mongo-server -p 27017:27017 -v $(pwd)/data:/data/db -d mongo:latest
+            $ docker pull mongo
+            $ docker run --name mongo-server -p 27017:27017 -v $(pwd)/data:/data/db -d mongo:latest
 
 2. Construir el contenedor nodejs+app:
 
-      $ cd appwebArticulosNodejs
-      $ docker image build -t <docker_user>/artnode:<version> .
-      $ docker image push <docker_user>/artnode:<version>
-      $ docker run --name nodeapp --link mongo-server:mongo -p 3000:3000 -d <docker_user>/artnode:<version>
+            $ cd appwebArticulosNodejs
+            $ docker image build -t <docker_user>/artnode:<version> .
+            $ docker image push <docker_user>/artnode:<version>
+            $ docker run --name nodeapp --link mongo-server:mongo -p 3000:3000 -d <docker_user>/artnode:<version>
 
 3. Adquirir el contenedor oficial de nginx:
 
-      $ docker pull nginx
-      $ docker run --name webapp --link nodeapp:node -p 80:80 -v $(pwd)/nginx.conf:/etc/nginx/nginx.conf:ro -d nginx:latest
+            $ docker pull nginx
+            $ docker run --name webapp --link nodeapp:node -p 80:80 -v $(pwd)/nginx.conf:/etc/nginx/nginx.conf:ro -d nginx:latest
 
 4. comandos docker utiles:
 
