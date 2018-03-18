@@ -46,18 +46,18 @@ Reemplazar en los manifiestos de Kubernetes en el directorio k8s/:
 
 Para hacer el deploy a partir de los manifiestos, ejecutar desde el directorio raiz del código:
 
-      $ kubectl -n emontoya create -f k8s/
-      $ kubectl -n emontoya create configmap webapp-nginx-config --from-file=k8s/configmap/nginx.conf
+      kubectl -n emontoya create -f k8s/
+      kubectl -n emontoya create configmap webapp-nginx-config --from-file=k8s/configmap/nginx.conf
 
 ## Limpiar la instalación
 
 Para limpiar la instalación:
 
-      $ kubectl -n emontoya delete rc --all
-      $ kubectl -n emontoya delete deployment --all
-      $ kubectl -n emontoya delete ingress --all
-      $ kubectl -n emontoya delete configmap webapp-nginx-config
-      $ kubectl -n emontoya delete service --all
+      kubectl -n emontoya delete rc --all
+      kubectl -n emontoya delete deployment --all
+      kubectl -n emontoya delete ingress --all
+      kubectl -n emontoya delete configmap webapp-nginx-config
+      kubectl -n emontoya delete service --all
 
 /////
 
