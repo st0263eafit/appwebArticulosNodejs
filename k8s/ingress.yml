@@ -2,13 +2,13 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: articulos-ingress
-  namespace: emontoya
+  namespace: <namespace>
 
   # annotations:
   #   kubernetes.io/ingress.class: "tectonic"
 spec:
   rules:
-    - host: emontoya.dis.eafit.edu.co
+    - host: <namespace>.dis.eafit.edu.co
       http:
         paths:
           - path: /

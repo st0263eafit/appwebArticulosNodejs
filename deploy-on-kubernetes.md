@@ -10,8 +10,11 @@ By: Edwin Montoya Munera - emontoya@eafit.edu.co
 
 En el directorio raiz del código descargado ejecutar:
 
-      docker image build -t emontoya/artnode:1.0 .
-      docker image push emontoya/artnode:1.0
+      docker image build -t <docker_user>/artnode:<version> .
+      docker image push <docker_user>/artnode:<version>
+
+cambie el <docker_user> por el propio.
+coloquele version en <version>, puede ser 1.0
 
 ### 3. Tener un usuario y Certificados de acceso (el profesor suministrará las claves y certificados), estos deben ser copiados en:
 
@@ -46,18 +49,18 @@ Reemplazar en los manifiestos de Kubernetes en el directorio k8s/:
 
 Para hacer el deploy a partir de los manifiestos, ejecutar desde el directorio raiz del código:
 
-      kubectl -n emontoya create -f k8s/
-      kubectl -n emontoya create configmap webapp-nginx-config --from-file=k8s/configmap/nginx.conf
+      kubectl -n <namespace> create -f k8s/
+      kubectl -n <namespace> create configmap webapp-nginx-config --from-file=k8s/configmap/nginx.conf
 
 ## Limpiar la instalación
 
 Para limpiar la instalación:
 
-      kubectl -n emontoya delete rc --all
-      kubectl -n emontoya delete deployment --all
-      kubectl -n emontoya delete ingress --all
-      kubectl -n emontoya delete configmap webapp-nginx-config
-      kubectl -n emontoya delete service --all
+      kubectl -n <namespace> delete rc --all
+      kubectl -n <namespace> delete deployment --all
+      kubectl -n <namespace> delete ingress --all
+      kubectl -n <namespace> delete configmap webapp-nginx-config
+      kubectl -n <namespace> delete service --all
 
 /////
 

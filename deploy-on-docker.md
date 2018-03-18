@@ -34,19 +34,19 @@ Descargar el instalador grafico oficial de [Docker](https://docs.docker.com/dock
 1. Adquirir el contenedor oficial de mongo:
 
   $ docker pull mongo
-  $ docker run --name mongo-server -p 27017:27017 -v /Users/emontoya/data:/data/db -d mongo:latest
+  $ docker run --name mongo-server -p 27017:27017 -v $(pwd)/data:/data/db -d mongo:latest
 
 2. Construir el contenedor nodejs+app:
 
   $ cd appwebArticulosNodejs
-  $ docker image build -t emontoya/artnode:1.0 .
-  $ docker image push emontoya/artnode:1.0
-  $ docker run --name nodeapp --link mongo-server:mongo -p 3000:3000 -d emontoya/artnode:1.0
+  $ docker image build -t <docker_user>/artnode:<version> .
+  $ docker image push <docker_user>/artnode:<version>
+  $ docker run --name nodeapp --link mongo-server:mongo -p 3000:3000 -d <docker_user>/artnode:<version>
 
 3. Adquirir el contenedor oficial de nginx:
 
   $ docker pull nginx
-  $ docker run --name webapp --link nodeapp:node -p 80:80 -v /Users/emontoya/github/st0263eafit/appwebArticulosNodejs/nginx.conf:/etc/nginx/nginx.conf:ro -d nginx:latest
+  $ docker run --name webapp --link nodeapp:node -p 80:80 -v $(pwd)/nginx.conf:/etc/nginx/nginx.conf:ro -d nginx:latest
 
 4. comandos docker utiles:
 
@@ -56,7 +56,7 @@ Descargar el instalador grafico oficial de [Docker](https://docs.docker.com/dock
 
 * borrar una imagen:
 
-      $ docker image rm >image_id>
+      $ docker image rm <image_id>
 
 
 * lista contenedores en ejecución: 
