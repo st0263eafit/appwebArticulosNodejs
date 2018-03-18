@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ReplicationController
 metadata:
   name: mongo-server
-  namespace: <namespace>
+  namespace: emontoya
 spec:
   replicas: 1
   selector:
@@ -12,7 +12,8 @@ spec:
       name: mongo-server
       labels:
         app: mongo-server
-        namespace: <namespace>
+        namespace: emontoya
+
     spec:
       containers:
       - name: mongo

@@ -10,11 +10,8 @@ By: Edwin Montoya Munera - emontoya@eafit.edu.co
 
 En el directorio raiz del código descargado ejecutar:
 
-      docker image build -t <docker_hub_user>/artnode:<version> .
-      docker image push <docker_hub_user>/artnode:<version>
-
-      <docker_hub_user> = usuario de Docker hub
-      <version> = versión de la imagen en Docker hub
+      docker image build -t emontoya/artnode:1.0 .
+      docker image push emontoya/artnode:1.0
 
 ### 3. Tener un usuario y Certificados de acceso (el profesor suministrará las claves y certificados), estos deben ser copiados en:
 
@@ -41,27 +38,26 @@ Ir al directorio 'k8s/' y realizar el cambio de <namespace> por el usuario o pro
 
 Reemplazar en los manifiestos de Kubernetes en el directorio k8s/:
 
-      <namespace> = grupo, ej proyecto1
-      <docker_hub_user> = usuario de Docker hub
-      <version> = versión de la imagen en Docker hub
+      <namespace> = grupo, ejemplo: emontoya
+      <docker_hub_user> = usuario de Docker hub, ejemplo: emontoya
+      <version> = versión de la imagen en Docker hub, ejemplo: 1.0
 
 ## Despliegue en cluster de Kubernetes
 
 Para hacer el deploy a partir de los manifiestos, ejecutar desde el directorio raiz del código:
 
-      $ kubectl -n <namaspace> create -f k8s/
-      $ kubectl -n <namespace> create configmap webapp-nginx-config --from-file=k8s/configmap/nginx.conf
-
+      kubectl -n emontoya create -f k8s/
+      kubectl -n emontoya create configmap webapp-nginx-config --from-file=k8s/configmap/nginx.conf
 
 ## Limpiar la instalación
 
 Para limpiar la instalación:
 
-      $ kubectl -n <namespace> delete rc --all
-      $ kubectl -n <namespace> delete deployment --all
-      $ kubectl -n <namespace> delete ingress --all
-      $ kubectl -n <namespace> delete configmap webapp-nginx-config
-      $ kubectl -n <namespace> delete service --all
+      kubectl -n emontoya delete rc --all
+      kubectl -n emontoya delete deployment --all
+      kubectl -n emontoya delete ingress --all
+      kubectl -n emontoya delete configmap webapp-nginx-config
+      kubectl -n emontoya delete service --all
 
 /////
 

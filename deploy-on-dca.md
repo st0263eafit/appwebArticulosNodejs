@@ -118,7 +118,7 @@ En este ejemplo debe actualizar "config/config.js" con el path apropiado y en el
         app: {
           name: 'articulos'
         },
-        port: process.env.PORT || 4000,
+        port: process.env.PORT || 3000,
         db: 'mongodb://localhost/articulosem-test'
       },
       .
