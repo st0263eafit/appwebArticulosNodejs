@@ -13,6 +13,21 @@ By: Edwin Montoya Munera - emontoya@eafit.edu.co
       $ sudo apt-get update
       $ sudo apt-get install docker-ce
 
+### Centos 7
+
+    source: https://docs.docker.com/install/linux/docker-ce/centos/
+    
+    $ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    $ sudo yum install docker-ce
+    $ sudo systemctl start docker
+    $ sudo systemctl enable docker
+
+    instalar docker-compose: https://docs.docker.com/compose/install/
+
+    $ sudo curl -L https://github.com/docker/compose/releases/download/1.20.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+
+    $ sudo chmod +x /usr/local/bin/docker-compose
+
 ### En Windows:
 
 Descargar el instalador grafico oficial de [Docker](https://docs.docker.com/docker-for-windows/install/)
@@ -102,9 +117,9 @@ comprobar la ejecución con un browser y visitar la URL:
 
 Escenario: Tenemos 3 maquinas:
 
-### maq1: ej: 10.131.137.204, con docker y docker-compose instalado, y corriendo la app (nginx, rails, postgress).
+### maq1: ej: 10.131.137.204, con docker y docker-compose instalado, y corriendo la app (nginx, appnode, mongodb).
 
-### maq2: ej: 10.131.137.183, con docker y docker-compose instalado, y corriendo la app (nginx, rails, postgress).
+### maq2: ej: 10.131.137.183, con docker y docker-compose instalado, y corriendo la app (nginx, appnode, mongodb).
 
 utilizaremos balanceador de carda: HAPROXY en docker, en una maquina3:
 
