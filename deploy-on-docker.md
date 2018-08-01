@@ -63,6 +63,11 @@ Descargar el instalador grafico oficial de [Docker](https://docs.docker.com/dock
             $ docker pull nginx
             $ docker run --name webapp --link nodeapp:node -p 80:80 -v $(pwd)/nginx.conf:/etc/nginx/nginx.conf:ro -d nginx:latest
 
+Con https con certificados autofirmados:
+
+            $ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ssl/nginx.key -out ssl/nginx.crt
+            $ docker run --name webapp --link nodeapp:node -p 80:80 -p 443:443 -v $(pwd)/ssl:/etc/nginx/ssl:ro -v $(pwd)/nginx.conf:/etc/nginx/nginx.conf:ro -d nginx:latest
+
 4. comandos docker utiles:
 
 * lista imagenes:
@@ -98,10 +103,14 @@ Descargar el instalador grafico oficial de [Docker](https://docs.docker.com/dock
 
 ## Con docker-compose
 
+Con https con certificados autofirmados:
+
+      $ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ssl/nginx.key -out ssl/nginx.crt
+
 Se ejecuta el docker-compose
 
-    $ docker-compose build
-    $ docker-compose up
+      $ docker-compose build
+      $ docker-compose up
 
 comprobar la ejecución con un browser y visitar la URL:
 
