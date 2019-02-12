@@ -6,6 +6,29 @@ By: Edwin Montoya Munera - emontoya@eafit.edu.co
 
 ## Instalar Docker
 
+### En AWS Amazon Linux - programa AWS Educate
+
+      # imagen: Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type - ami-0080e4c5bc078760e
+      # imagen: Amazon Linux 2 AMI (HVM), SSD Volume Type - ami-035be7bafff33b6b6 (64-bit x86) / ami-0217d483951e4cec3 (64-bit Arm)
+      # guia: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html
+
+      $ sudo yum update -y
+
+      # para Amazon Linux AMI
+      $ sudo yum install docker
+
+      # para Amazon Linux 2 AMI
+      $ sudo amazon-linux-extras install docker
+
+      $ sudo service docker start
+      $ sudo usermod -a -G docker ec2-user
+      $ reboot
+
+      instalar docker-compose: https://docs.docker.com/compose/install/
+
+      $ sudo curl -L https://github.com/docker/compose/releases/download/1.24.0-rc1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+      $ sudo chmod +x /usr/local/bin/docker-compose
+
 ### En Ubuntu:
 
       $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -16,18 +39,19 @@ By: Edwin Montoya Munera - emontoya@eafit.edu.co
 ### Centos 7
 
     source: https://docs.docker.com/install/linux/docker-ce/centos/
-    
+
     $ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
     $ sudo yum install docker-ce
     $ sudo systemctl start docker
     $ sudo systemctl enable docker
+    $ sudo usermod -aG docker user1
 
     instalar docker-compose: https://docs.docker.com/compose/install/
 
     $ sudo curl -L https://github.com/docker/compose/releases/download/1.24.0-rc1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 
     $ sudo chmod +x /usr/local/bin/docker-compose
-    $ sudo usermod -aG docker user1
+
 
 ### En Windows:
 
@@ -80,11 +104,11 @@ Con https con certificados autofirmados:
       $ docker image rm <image_id>
 
 
-* lista contenedores en ejecución: 
+* lista contenedores en ejecución:
 
       $ docker container ls
       $ docker ps
-  
+
 * lista todos los contenedores estén o no ejecutando:
 
       $ docker container ls -a
@@ -92,15 +116,15 @@ Con https con certificados autofirmados:
 
 * para la ejecución de un contenedor:
 
-      $ docker container stop <container_id> 
+      $ docker container stop <container_id>
 
 * borrar un contenedor, despues que esta detenido:
 
-      $ docker container rm <container_id> 
+      $ docker container rm <container_id>
 
 * ver los logs de un contenedor:
 
-      $ docker container logs <container_id> 
+      $ docker container logs <container_id>
 
 ## Con docker-compose
 
