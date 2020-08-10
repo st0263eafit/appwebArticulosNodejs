@@ -43,15 +43,16 @@ By: Edwin Montoya Munera - emontoya@eafit.edu.co
 
     source: https://docs.docker.com/install/linux/docker-ce/centos/
 
+    $ sudo yum install -y epel-release yum-utils vim
     $ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-    $ sudo yum install docker-ce
+    $ sudo yum install docker-ce -y
     $ sudo systemctl start docker
     $ sudo systemctl enable docker
-    $ sudo usermod -aG docker user1
+    $ sudo usermod -aG docker userdca
 
     instalar docker-compose: https://docs.docker.com/compose/install/
 
-    $ sudo curl -L https://github.com/docker/compose/releases/download/1.24.0-rc1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+    $ sudo curl -L https://github.com/docker/compose/releases/download/1.26.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 
     $ sudo chmod +x /usr/local/bin/docker-compose
 
