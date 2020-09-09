@@ -1,22 +1,68 @@
-image: node:latest
+image: docker:latest
+services:
+  - docker:dind
 
-    stages:
-      - build
-      - test
+stages:
+  - test
+  - deploy
 
-    cache:
-      paths:
-        - node_modules/
+step-develop:
+  stage: test
+  before_script:
+    - export DYNAMIC_ENV_VAR=DEVELOP
+  only:
+    - develop
+  tags:
+    - develop
+  script:
+    - echo running tests in $DYNAMIC_ENV_VAR
 
-    install_dependencies:
-      stage: build
-      script:
-        - npm install
-      artifacts:
-        paths:
-          - node_modules/
+step-uat:
+  stage: deploy
+  before_script:
+    - export DYNAMIC_ENV_VAR=UAT
+  only:
+    - uat
+  tags:
+    - uat
+  script:
+    - echo setting up env $DYNAMIC_ENV_VAR
+    - sudo apt-get install -y python-pip
+    - sudo pip install docker-compose
+    - sudo docker image prune -f
+    - sudo docker-compose -f docker-compose.yml build --no-cache
+    - sudo docker-compose -f docker-compose.yml up -d
 
-    testing_testing:
-      stage: test
-      script: npm test
+step-deploy-staging:
+  stage: deploy
+  before_script:
+    - export DYNAMIC_ENV_VAR=STAGING
+  only:
+    - staging
+  tags:
+    - staging
+  script:
+    - echo setting up env $DYNAMIC_ENV_VAR
+    - sudo apt-get install -y python-pip
+    - sudo pip install docker-compose
+    - sudo docker image prune -f
+    - sudo docker-compose -f docker-compose.yml build --no-cache
+    - sudo docker-compose -f docker-compose.yml up -d
+
+step-deploy-production:
+  stage: deploy
+  before_script:
+    - export DYNAMIC_ENV_VAR=PRODUCTION
+  only:
+    - production
+  tags:
+    - production
+  script:
+    - echo setting up env $DYNAMIC_ENV_VAR
+    - sudo apt-get install -y python-pip
+    - sudo pip install docker-compose
+    - sudo docker image prune -f
+    - sudo docker-compose -f docker-compose.yml build --no-cache
+    - sudo docker-compose -f docker-compose.yml up -d
+  when: manual
 
